@@ -15,11 +15,22 @@ public class ProductoService {
    private ProductoRepository productoRepository;
 
 
-    public Response fineAll(){
+    public Response findAll(){
         Response response= new Response();
         try {
             List<ProductoEntity> productoList = productoRepository.findAll();
             response.setData(productoList);
+        }catch(Exception e){
+
+        }
+        return response;
+    }
+
+    public Response findOneById(String id){
+        Response response= new Response();
+        try {
+            ProductoEntity productoEntity = productoRepository.findById(Integer.parseInt(id)).get();
+            response.setData(productoEntity);
         }catch(Exception e){
 
         }
