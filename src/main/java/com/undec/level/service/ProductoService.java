@@ -21,7 +21,8 @@ public class ProductoService {
             List<ProductoEntity> productoList = productoRepository.findAll();
             response.setData(productoList);
         }catch(Exception e){
-
+            e.printStackTrace();
+            throw e;
         }
         return response;
     }
@@ -32,6 +33,7 @@ public class ProductoService {
             ProductoEntity productoEntity = productoRepository.findById(Integer.parseInt(id)).get();
             response.setData(productoEntity);
         }catch(Exception e){
+            e.printStackTrace();
 
         }
         return response;

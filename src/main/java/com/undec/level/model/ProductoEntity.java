@@ -13,6 +13,7 @@ public class ProductoEntity {
     private double precio;
     private String imgpath;
 
+
     @Id
     @Column(name = "id")
     public int getId() {
